@@ -107,7 +107,7 @@ def decode(rawstr, json_loads=default_json_loads):
     Decode a rawstr packet arriving from the socket into a dict.
     """
     decoded_msg = {}
-    split_data = rawstr.split(":", 3)
+    split_data = rawstr.decode().split(":", 3)
     msg_type = split_data[0]
     msg_id = split_data[1]
     endpoint = split_data[2]
